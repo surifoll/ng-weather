@@ -1,0 +1,25 @@
+div.hey {
+    display: inline-block;
+    margin: auto;
+    background-color: #DCDCDC;
+    border-width: 15px;
+    border: white solid transparent;
+  }
+
+  
+.tab-title {
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tab-title.active {
+  font-weight: bold;
+}
+
+.tab-title :hover {
+  font-weight: bold;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}

@@ -1,0 +1,8 @@
+<div role="tabpanel" [ngClass]="{'active': active}"  class="tab-pane row border border-dark border-5 hey" *ngIf="active" >
+    <ng-container *ngIf="active">
+      <div class="tab-title" [ngClass]="{'active': active}">
+       
+      </div>
+    </ng-container>
+    <ng-content  *ngIf="active"></ng-content>
+  </div>

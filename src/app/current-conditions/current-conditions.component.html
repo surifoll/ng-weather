@@ -1,0 +1,21 @@
+<div *ngIf="currentConditionsByZip$ | async as currentConditionsByZip">
+<app-tabs [tabConfigs]="myConfig">
+  <app-tab *ngFor="let location of currentConditionsByZip; let i = index" [active]="i === currentIndex" [key]="location.zip" [title]=" location.data.name + ' ('+  location.zip + ')'"  >
+    <div class="content-container  col-sm-6">
+      <h3 tabTitle>{{ location.data.name }} ({{ location.zip }}) </h3>
+      <h4>Current conditions: {{ location.data.weather[0].main }}</h4>
+      <h4>Temperatures today:</h4>
+      <p>
+        Current {{ location.data.main.temp | number:'.0-0' }} - Max {{ location.data.main.temp_max | number:'.0-0' }}
+        - Min {{ location.data.main.temp_min | number:'.0-0' }}
+      </p>
+      <p>
+        <a [routerLink]="['/forecast', location.zip]">Show 5-day forecast for {{ location.data.name }}</a>
+      </p>
+    </div>
+    <div class="tab-image-container col-sm-6">
+      <img [src]="location.data.icon">
+    </div>
+  </app-tab>
+</app-tabs>
+</div>

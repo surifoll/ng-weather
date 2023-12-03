@@ -1,0 +1,13 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li *ngFor="let tab of tabs" role="presentation">
+    <a (click)="selectTab(tab)" role="tab" class="nav-item nav-link bg-primary text-white margin-3 w-15" [ngClass]="{'active': tab.active}" >
+      {{tab.title}}
+      <span class="close ml-1 text-white" (click)="action(tab.key)"> x</span>
+    </a>
+  </li>
+</ul>
+<div class="tab-content">
+  <div>
+  <ng-content></ng-content>
+  </div>
+</div>
